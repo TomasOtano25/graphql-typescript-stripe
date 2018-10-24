@@ -8,6 +8,15 @@ export class User extends BaseEntity {
   @Column("text", { unique: true })
   email: string;
 
+  @Column("text", { nullable: true })
+  stripeId: string;
+
+  @Column("text", { nullable: true })
+  ccLast4: string;
+
+  @Column("text", { default: "free-trial" })
+  type: string;
+
   @Column("text")
   password: string;
 }
