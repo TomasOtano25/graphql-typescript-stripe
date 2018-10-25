@@ -20,6 +20,24 @@ export interface MeQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CancelSubscriptionMutation
+// ====================================================
+
+export interface CancelSubscriptionMutation_cancelSubscription {
+  id: string;
+  email: string;
+  type: string;
+  ccLast4: string | null;
+}
+
+export interface CancelSubscriptionMutation {
+  cancelSubscription: CancelSubscriptionMutation_cancelSubscription | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: ChangeCreditCardMutation
 // ====================================================
 
@@ -27,6 +45,7 @@ export interface ChangeCreditCardMutation_changeCreditCard {
   id: string;
   email: string;
   type: string;
+  ccLast4: string | null;
 }
 
 export interface ChangeCreditCardMutation {
@@ -49,6 +68,7 @@ export interface CreateSubscriptionMutation_createSubscription {
   id: string;
   email: string;
   type: string;
+  ccLast4: string | null;
 }
 
 export interface CreateSubscriptionMutation {
@@ -71,6 +91,7 @@ export interface LoginMutation_login {
   id: string;
   email: string;
   type: string;
+  ccLast4: string | null;
 }
 
 export interface LoginMutation {
@@ -96,6 +117,20 @@ export interface RegisterMutation {
 export interface RegisterMutationVariables {
   email: string;
   password: string;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: UserInfo
+// ====================================================
+
+export interface UserInfo {
+  id: string;
+  email: string;
+  type: string;
+  ccLast4: string | null;
 }
 
 /* tslint:disable */

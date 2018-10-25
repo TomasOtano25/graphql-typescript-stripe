@@ -65,6 +65,7 @@ export class SubscribeUser extends React.PureComponent {
             }}
             // stripeKey="pk_test_DfdUj9U4CiFdIflvg3X3rjRZ"
             stripeKey={process.env.REACT_APP_STRIP_PUBLISHABLE!}
+            amount={1000}
           />
         )}
       </Mutation>

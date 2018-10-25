@@ -5,6 +5,7 @@ import { MeQuery } from "../../schemaTypes";
 import { SubscribeUser } from "./SubscribeUser";
 
 import { meQuery } from "../../graphql";
+import { CancelSubscription } from "./CancelSubscription";
 import { ChangeCreditCard } from "./ChangeCreditCard";
 
 export class Account extends React.PureComponent {
@@ -34,6 +35,7 @@ export class Account extends React.PureComponent {
             <div>
               <div>your current las 4 digits: {data.me.ccLast4}</div>
               <ChangeCreditCard />
+              <CancelSubscription />
             </div>
           );
 
