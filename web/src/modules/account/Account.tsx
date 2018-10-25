@@ -30,7 +30,13 @@ export class Account extends React.PureComponent {
           }
           // return <div>thanks for buying our product</div>;
           // return <Redirect to="/paid-users" />;
-          return <ChangeCreditCard />;
+          return (
+            <div>
+              <div>your current las 4 digits: {data.me.ccLast4}</div>
+              <ChangeCreditCard />
+            </div>
+          );
+
           // return (
           //   <p>
           //     {data.me.email} - {data.me.type}

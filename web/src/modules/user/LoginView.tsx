@@ -7,14 +7,18 @@ import { LoginMutation, LoginMutationVariables } from "../../schemaTypes";
 
 import { meQuery } from "../../graphql";
 
+import { userFragment } from "../../graphql/fragments/userFragment";
+
 const loginMutation = gql`
   mutation LoginMutation($email: String!, $password: String!) {
     login(email: $email, password: $password) {
-      id
-      email
-      type
+      # id
+      # email
+      # type
+      ...UserInfo
     }
   }
+  ${userFragment}
 `;
 
 export class LoginView extends React.PureComponent<RouteComponentProps<{}>> {

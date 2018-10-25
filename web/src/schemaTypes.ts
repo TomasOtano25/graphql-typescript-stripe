@@ -9,6 +9,7 @@ export interface MeQuery_me {
   id: string;
   email: string;
   type: string;
+  ccLast4: string | null;
 }
 
 export interface MeQuery {
@@ -34,6 +35,7 @@ export interface ChangeCreditCardMutation {
 
 export interface ChangeCreditCardMutationVariables {
   source: string;
+  ccLast4: string;
 }
 
 /* tslint:disable */
@@ -55,6 +57,7 @@ export interface CreateSubscriptionMutation {
 
 export interface CreateSubscriptionMutationVariables {
   source: string;
+  ccLast4: string;
 }
 
 /* tslint:disable */
