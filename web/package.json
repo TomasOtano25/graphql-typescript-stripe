@@ -10,7 +10,9 @@
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "3.1.0",
-    "react-stripe-checkout": "^2.6.3"
+    "react-stripe-checkout": "^2.6.3",
+    "serve": "^10.0.2",
+    "styled-components": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -19,7 +21,8 @@
     "eject": "react-scripts-ts eject",
     "schema:download": "apollo schema:download --endpoint=http://localhost:4000/graphql",
     "codegen:generate": "apollo codegen:generate --queries=./src/**/*{.tsx,.ts}  --schema=./schema.json --outputFlat --target=typescript ./src/schemaTypes.ts",
-    "gen:types": "npm run schema:download && npm run codegen:generate"
+    "gen:types": "npm run schema:download && npm run codegen:generate",
+    "now-start": "serve -s ./build"
   },
   "devDependencies": {
     "@types/graphql": "^14.0.3",
@@ -28,6 +31,7 @@
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
     "@types/react-router-dom": "^4.3.1",
+    "@types/styled-components": "^4.0.2",
     "apollo": "^1.9.2",
     "typescript": "^3.1.3"
   },

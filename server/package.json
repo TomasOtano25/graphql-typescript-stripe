@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "0.0.1",
+  "main": "dist/index.js",
   "description": "Awesome project developed with TypeORM.",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -26,6 +27,8 @@
     "typeorm": "0.2.8"
   },
   "scripts": {
-    "start": "nodemon --exec ts-node src/index.ts"
+    "build": "tsc",
+    "start-ts": "nodemon --exec ts-node src/index.ts",
+    "start": "ts-node src/index.ts"
   }
 }

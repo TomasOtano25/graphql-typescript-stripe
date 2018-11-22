@@ -1,9 +1,22 @@
 import * as React from "react";
+import styled from "styled-components";
 
 import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
 import { RouteComponentProps } from "react-router-dom";
 import { RegisterMutation, RegisterMutationVariables } from "../../schemaTypes";
+import { FormWrapper } from "../../ui/FormWrapper";
+import { Input } from "../../ui/Input";
+import { RedButton, RedButtonText } from "../../ui/RedButton";
+
+const H1 = styled.h1`
+  font-size: 62px;
+  font-weight: 700;
+  margin-top: 20vh;
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 1.1;
+`;
 
 const registerMutation = gql`
   mutation RegisterMutation($email: String!, $password: String!) {
@@ -31,32 +44,29 @@ export class RegisterView extends React.PureComponent<RouteComponentProps<{}>> {
         {mutate => (
           <div
             style={{
-              alignItems: "center",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center"
+              alignItems: "center"
             }}
           >
-            <div>
-              <input
+            <H1>Register</H1>
+            <FormWrapper>
+              <Input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Enter your email address..."
                 value={email}
                 onChange={this.handleChange}
               />
-            </div>
-            <div>
-              <input
+
+              <Input
                 type="password"
                 name="password"
-                placeholder="Password"
+                placeholder="Enter your password... "
                 value={password}
                 onChange={this.handleChange}
               />
-            </div>
-            <div>
-              <button
+              <RedButton
                 onClick={async () => {
                   const response = await mutate({
                     // variables: {
@@ -69,9 +79,9 @@ export class RegisterView extends React.PureComponent<RouteComponentProps<{}>> {
                   this.props.history.push("/login");
                 }}
               >
-                Register
-              </button>
-            </div>
+                <RedButtonText>Continue</RedButtonText>
+              </RedButton>
+            </FormWrapper>
           </div>
         )}
       </Mutation>

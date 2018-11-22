@@ -32,7 +32,7 @@ export class Account extends React.PureComponent {
           // return <div>thanks for buying our product</div>;
           // return <Redirect to="/paid-users" />;
           return (
-            <div>
+            <div style={{ marginTop: "80px" }}>
               <div>your current las 4 digits: {data.me.ccLast4}</div>
               <ChangeCreditCard />
               <CancelSubscription />
